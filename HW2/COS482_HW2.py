@@ -7,7 +7,7 @@ import psycopg2
 
 # Connection string
 
-conn = psycopg2.connect("host=100.68.143.119 dbname=moviesdb user=kaleb password=5313")
+conn = psycopg2.connect("host=100.68.143.119 dbname=moviesdb user= password=")
 cur = conn.cursor()
 
 # Add Person Table 
