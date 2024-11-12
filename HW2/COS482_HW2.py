@@ -69,7 +69,7 @@ cur.execute('''
 conn.commit()
 
 # Add Data to tables
-'''
+
 # Add data to person table
 with open('HW2/IMDB/IMDBPerson.txt', 'r',  encoding='latin-1') as file:
     #skip first line with file lables
@@ -89,8 +89,8 @@ with open('HW2/IMDB/IMDBPerson.txt', 'r',  encoding='latin-1') as file:
         except:
             conn.rollback()
             print("Error ID:"+ ID)        
-'''  
-'''
+
+
 # Add data to director table      
 with open('HW2/IMDB/IMDBDirectors.txt', 'r', encoding='latin-1') as file:
     #skip the first line with file lables
@@ -109,8 +109,8 @@ with open('HW2/IMDB/IMDBDirectors.txt', 'r', encoding='latin-1') as file:
         except:
             conn.rollback()
             print("Error ID:"+ ID) 
-'''
-'''
+
+
 # Add data to Movie table
 with open('HW2/IMDB/IMDBMovie.txt', 'r', encoding='latin-1') as file:
     #skip the first line with file lables
@@ -133,7 +133,8 @@ with open('HW2/IMDB/IMDBMovie.txt', 'r', encoding='latin-1') as file:
         except:
             conn.rollback()
             print("Error ID:"+ ID) 
-'''  
+
+
 # Add data to ActsIn table
 with open('HW2/IMDB/IMDBCast.txt', 'r', encoding='latin-1') as file:
     #skip the first line with file lables
@@ -153,6 +154,7 @@ with open('HW2/IMDB/IMDBCast.txt', 'r', encoding='latin-1') as file:
         except Exception as e:
             conn.rollback()
             print(e)
+
 
 # Add data to Directs table
 with open('HW2/IMDB/IMDBMovie_Directors.txt', 'r', encoding='latin-1') as file:
