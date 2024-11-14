@@ -1,0 +1,99 @@
+Kaleb Hannan
+COS 482
+HW2 Task 3
+SQL Results
+
+a)
+   ID   | First Name |  Last Name  | Gender
+--------+------------+-------------+--------
+  44788 | J. Stuart  | Blackton    | M
+  84735 | G.H.       | Chirgwin    | M
+  85803 | Willy      | Christiaens | M
+  89259 | Paul       | Clerget     | M
+  90405 | William F. | Cody        | M
+  94001 | Chuck (II) | Connors     | M
+  95960 | James J.   | Corbett     | M
+  98595 | William    | Courtenay   | M
+ 120134 | David      | Devant      | M
+ 120585 | George (I) | Dewey       | M
+
+
+b)
+ ID |     First Name     |  Last Name
+----+--------------------+-------------
+  1 | Todd               | 1
+  3 | Lejaren            | a'Hiller
+  5 | Khairiya           | A-Mansour
+  8 | Kodanda Rami Reddy | A.
+ 14 | Mang               | Aag
+ 17 | Safdar             | Aah
+ 22 | Veikko             | Aaltonen
+ 23 | P∩┐╜l              | Aam
+ 26 | Douglas            | Aarniokoski
+ 31 | Paul               | Aaron
+
+
+c)
+   ID   |                 Name                 | Year |        Rank
+--------+--------------------------------------+------+--------------------
+ 346246 | Undercover X (2001)                  | 2001 |                 10
+ 308557 | Song for Honest Abe, A (2001)        | 2001 |                 10
+ 374517 | Zenith (2001)                        | 2001 | 9.9000000000000004
+  65522 | Clearing, The (2001)                 | 2001 | 9.9000000000000004
+ 213772 | Milagro of Boyle Heights, The (2001) | 2001 | 9.8000000000000007
+ 137709 | Halo (2001)                          | 2001 | 9.6999999999999993
+ 302296 | Simulacra (2001)                     | 2001 | 9.6999999999999993
+  58084 | Cerebrium (2001)                     | 2001 | 9.6999999999999993
+ 277703 | Richard Roe (2001)                   | 2001 | 9.6999999999999993
+  54879 | Card Sharks (2001/II)                | 2001 | 9.5999999999999996
+
+
+d)
+  ID   |         First Name         | Last Name  | Num Of Films
+-------+----------------------------+------------+--------------
+ 25116 | Dave                       | Fleischer  |          616
+ 56530 | Georges                    | M∩┐╜li∩┐╜s |          554
+ 30570 | D.W.                       | Griffith   |          530
+  1958 | Gilbert M. 'Broncho Billy' | Anderson   |          360
+ 24576 | Louis                      | Feuillade  |          345
+ 72184 | Mack                       | Sennett    |          330
+ 41763 | Seymour                    | Kneitel    |          320
+ 26173 | Friz                       | Freleng    |          316
+ 24941 | Bud                        | Fisher     |          312
+ 38415 | Chuck (I)                  | Jones      |          293
+
+
+e)
+Most Actors
+ Movie ID |               Moive Name               | Num Actors
+----------+----------------------------------------+------------
+    20625 | Around the World in Eighty Days (1956) |       1274
+
+Least Actors
+ Movie ID |                Moive Name                 | Num Actors
+----------+-------------------------------------------+------------
+        5 | $1,000 Reward (1923)                      |          1
+       47 | '88 Dodge Aries (2002)                    |          1
+      102 | 'Elf' Jukebox (2004)                      |          1
+      217 | 'Revenue' and the Girl, The (1911)        |          1
+      227 | 'Sagasta', Admiral Dewey's Pet Pig (1899) |          1
+      250 | 'Swim, Swim...' (1996)                    |          1
+      255 | 'Tags': A Short Film (1995)               |          1
+      268 | 'Tis Mother! (1912)                       |          1
+      273 | 'Tis the Season to Be Smurfy (1984)       |          1
+      297 | 'What's Your 'I.Q.'?' Number Two (1940)   |          1
+
+
+f)
+ ID  |  First Name  | Last Name | Num Directors
+-----+--------------+-----------+---------------
+  35 | Mode         | 2         |            32
+  38 | Andr∩┐╜      | 3000      |            13
+  40 | Articolo     | 31        |            13
+  43 | Mick         | 5         |            10
+  70 | Hauk (I)     | Aabel     |            10
+  71 | Per (I)      | Aabel     |            13
+  92 | Lee          | Aaker     |            30
+ 116 | Risto        | Aaltonen  |            12
+ 122 | Willie       | Aames     |            81
+ 125 | Thor Michael | Aamodt    |            14

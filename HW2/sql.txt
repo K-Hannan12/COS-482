@@ -1,0 +1,93 @@
+﻿Kaleb Hannan
+COS 483
+HW2
+SQL Statements
+
+
+a) 
+SELECT DISTINCT person.ID as "ID", person.fname as "First Name", person.lname as "Last Name", person.gender as "Gender" 
+FROM person 
+WHERE person.id IN (
+SELECT actsin.pid
+FROM actsin JOIN movie ON actsin.mid = movie.id 
+WHERE movie.year between 1850 and 1899
+) 
+AND person.id IN (
+SELECT actsin.pid 
+FROM actsin JOIN movie ON actsin.mid = movie.id 
+WHERE movie.year between 1900 and 1950
+) 
+LIMIT 10;
+
+
+b)
+SELECT DISTINCT director.id AS "ID", director.fname AS "First Name", director.lname AS "Last Name" 
+FROM director 
+JOIN directs ON directs.did = director.id 
+JOIN movie ON movie.id = directs.mid 
+WHERE (movie.year % 4 = 0 and movie.year %100 != 0) OR (movie.year % 400 = 0) 
+LIMIT 10;
+
+
+c)
+SELECT m.ID AS "ID", m.name AS "Name", m.year AS "Year", m.rank AS "Rank" 
+FROM movie m, 
+(SELECT movie.year as year, movie.rank as rank FROM movie WHERE movie.Name = 'Shrek (2001)' ) AS Shrek 
+WHERE m.year = Shrek.year AND m.rank > Shrek.rank 
+ORDER BY m.rank DESC 
+LIMIT 10;
+
+
+d)
+SELECT DISTINCT director.id AS "ID", director.fname AS "First Name", director.lname AS "Last Name" , COUNT(directs.mid) AS "Num Of Films"
+FROM director
+JOIN directs ON director.id = directs.did
+GROUP BY director.id
+ORDER BY COUNT(directs.mid)  DESC 
+LIMIT 10;
+
+
+e) 
+(Most Actors)
+
+SELECT movie.id AS "Movie ID", movie.name AS "Moive Name”, COUNT(actsin.pid) AS “Num Actors”
+From movie
+JOIN actsin ON movie.id = actsin.mid  
+GROUP By movie.id
+HAVING COUNT(actsin.pid) = (
+SELECT MAX(actorCount)
+FROM (SELECT COUNT(actsin.pid) AS actorCount
+FROM movie
+JOIN actsin ON movie.id = actsin.mid 
+GROUP BY movie.id))
+LIMIT 10;
+
+
+(Least Actors)
+
+SELECT movie.id AS "Movie ID", movie.name AS "Moive Name”, COUNT(actsin.pid) AS “Num Actors”
+From movie
+JOIN actsin ON movie.id = actsin.mid  
+GROUP By movie.id
+HAVING COUNT(actsin.pid) = (
+SELECT MIN(actorCount)
+FROM (SELECT COUNT(actsin.pid) AS actorCount
+FROM movie
+JOIN actsin ON movie.id = actsin.mid 
+GROUP BY movie.id))
+LIMIT 10;
+
+
+
+
+
+
+f) 
+SELECT person.id AS "ID", person.fname AS "First Name", person.lname AS "Last Name", COUNT(DISTINCT directs.did) AS “Num Directors”
+FROM person 
+JOIN actsin ON person.id = actsin.pid 
+JOIN movie ON actsin.mid = movie.id 
+JOIN directs ON movie.id = directs.mid 
+GROUP BY person.id 
+HAVING COUNT(DISTINCT directs.did) >= 10 
+LIMIT 10;
