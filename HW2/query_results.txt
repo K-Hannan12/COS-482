@@ -4,7 +4,7 @@ HW2 Task 3
 SQL Results
 
 a)
-   ID   | First Name |  Last Name  | Gender
+  ID   | First Name |  Last Name  | Gender
 --------+------------+-------------+--------
   44788 | J. Stuart  | Blackton    | M
   84735 | G.H.       | Chirgwin    | M
