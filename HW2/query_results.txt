@@ -65,35 +65,35 @@ d)
 
 e)
 Most Actors
- Movie ID |               Moive Name               | Num Actors
-----------+----------------------------------------+------------
-    20625 | Around the World in Eighty Days (1956) |       1274
+ Movie ID |               Moive Name               | Year |        Rank        | Num Actors
+----------+----------------------------------------+------+--------------------+------------
+    20625 | Around the World in Eighty Days (1956) | 1956 | 6.7999999999999998 |       1274
+
 
 Least Actors
- Movie ID |                Moive Name                 | Num Actors
-----------+-------------------------------------------+------------
-        5 | $1,000 Reward (1923)                      |          1
-       47 | '88 Dodge Aries (2002)                    |          1
-      102 | 'Elf' Jukebox (2004)                      |          1
-      217 | 'Revenue' and the Girl, The (1911)        |          1
-      227 | 'Sagasta', Admiral Dewey's Pet Pig (1899) |          1
-      250 | 'Swim, Swim...' (1996)                    |          1
-      255 | 'Tags': A Short Film (1995)               |          1
-      268 | 'Tis Mother! (1912)                       |          1
-      273 | 'Tis the Season to Be Smurfy (1984)       |          1
-      297 | 'What's Your 'I.Q.'?' Number Two (1940)   |          1
-
+ Movie ID |                Moive Name                 | Year |        Rank        | Num Actors
+----------+-------------------------------------------+------+--------------------+------------
+        5 | $1,000 Reward (1923)                      | 1923 |                    |          1
+       47 | '88 Dodge Aries (2002)                    | 2002 |                    |          1
+      102 | 'Elf' Jukebox (2004)                      | 2004 |                    |          1
+      217 | 'Revenue' and the Girl, The (1911)        | 1911 |                    |          1
+      227 | 'Sagasta', Admiral Dewey's Pet Pig (1899) | 1899 |                    |          1
+      250 | 'Swim, Swim...' (1996)                    | 1996 |                    |          1
+      255 | 'Tags': A Short Film (1995)               | 1995 |                    |          1
+      268 | 'Tis Mother! (1912)                       | 1912 |                    |          1
+      273 | 'Tis the Season to Be Smurfy (1984)       | 1984 |                    |          1
+      297 | 'What's Your 'I.Q.'?' Number Two (1940)   | 1940 | 5.9000000000000004 |          1
 
 f)
- ID  |  First Name  | Last Name | Num Directors
------+--------------+-----------+---------------
-  35 | Mode         | 2         |            32
-  38 | Andr∩┐╜      | 3000      |            13
-  40 | Articolo     | 31        |            13
-  43 | Mick         | 5         |            10
-  70 | Hauk (I)     | Aabel     |            10
-  71 | Per (I)      | Aabel     |            13
-  92 | Lee          | Aaker     |            30
- 116 | Risto        | Aaltonen  |            12
- 122 | Willie       | Aames     |            81
- 125 | Thor Michael | Aamodt    |            14
+  ID  |  First Name  | Last Name | Gender | Num Directors
+-----+--------------+-----------+--------+---------------
+  35 | Mode         | 2         | M      |            32
+  38 | Andr∩┐╜      | 3000      | M      |            13
+  40 | Articolo     | 31        | M      |            13
+  43 | Mick         | 5         | M      |            10
+  70 | Hauk (I)     | Aabel     | M      |            10
+  71 | Per (I)      | Aabel     | M      |            13
+  92 | Lee          | Aaker     | M      |            30
+ 116 | Risto        | Aaltonen  | M      |            12
+ 122 | Willie       | Aames     | M      |            81
+ 125 | Thor Michael | Aamodt    | M      |            14
