@@ -127,8 +127,7 @@ with open('HW3/IMDB/IMDBMovie.txt', 'r', encoding='latin-1') as file:
     
         #create moive document
         moive = {
-        "_id": ID,
-        "name": name,
+        "_id": name,
         "year": year,
         "rank": rank,
         "cast": cast_list,
