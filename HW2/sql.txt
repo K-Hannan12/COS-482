@@ -50,7 +50,7 @@ LIMIT 10;
 e) 
 (Most Actors)
 
-SELECT movie.id AS "Movie ID", movie.name AS "Moive Name”, COUNT(actsin.pid) AS “Num Actors”
+SELECT movie.id AS "Movie ID", movie.name AS "Moive Name”, movie.year AS "Year", movie.rank AS "Rank", COUNT(actsin.pid) AS "Num Actors"
 From movie
 JOIN actsin ON movie.id = actsin.mid  
 GROUP By movie.id
@@ -65,7 +65,7 @@ LIMIT 10;
 
 (Least Actors)
 
-SELECT movie.id AS "Movie ID", movie.name AS "Moive Name”, COUNT(actsin.pid) AS “Num Actors”
+SELECT movie.id AS "Movie ID", movie.name AS "Moive Name”,  movie.year AS "Year", movie.rank AS "Rank", COUNT(actsin.pid) AS "Num Actors"
 From movie
 JOIN actsin ON movie.id = actsin.mid  
 GROUP By movie.id
@@ -78,12 +78,8 @@ GROUP BY movie.id))
 LIMIT 10;
 
 
-
-
-
-
 f) 
-SELECT person.id AS "ID", person.fname AS "First Name", person.lname AS "Last Name", COUNT(DISTINCT directs.did) AS “Num Directors”
+SELECT person.id AS "ID", person.fname AS "First Name", person.lname AS "Last Name", person.gender AS "Gender", COUNT(DISTINCT directs.did) AS "Num Directors"
 FROM person 
 JOIN actsin ON person.id = actsin.pid 
 JOIN movie ON actsin.mid = movie.id 
