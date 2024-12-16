@@ -6,7 +6,7 @@ db = client["COS482HW3"]
 colection =  db["IMDB"]
 
 # create and idex for easy acces when looking up my name
-colection.create_index([("name", pymongo.ASCENDING)])
+colection.create_index([("name", 1)])
 
 # make Cast info dict
 castInfo = {}
@@ -87,8 +87,8 @@ with open('HW3/IMDB/IMDBMovie.txt', 'r', encoding='latin-1') as file:
         frontOfRow = frontOfRow.split(',', 1)
         ID = frontOfRow[0].strip()
         name = frontOfRow[1].strip()
-        year = backOfRow[0].strip()
-        rank = backOfRow[1].strip() if backOfRow[1] !="" else None
+        year = int(backOfRow[0].strip())
+        rank = round(float(backOfRow[1].strip()),3) if backOfRow[1] !="" else None
 
         # get cast
         cast_list = []
@@ -126,7 +126,7 @@ with open('HW3/IMDB/IMDBMovie.txt', 'r', encoding='latin-1') as file:
             directors_list.append(director)
     
         #create moive document
-        moive = {
+        movie = {
         "_id": ID,
         "name": name,
         "year": year,
@@ -134,6 +134,6 @@ with open('HW3/IMDB/IMDBMovie.txt', 'r', encoding='latin-1') as file:
         "cast": cast_list,
         "directors": directors_list
         }
-        moive_list.append(moive)
+        moive_list.append(movie)
 
 colection.insert_many(moive_list)           
