@@ -7,9 +7,8 @@ from pyspark import SparkContext, SparkConf
 
 def pageRank(file):
     # Create Spark
-    conf = SparkConf().setAppName("PageRank").setMaster("local")
+    conf = SparkConf().setAppName("PageRankOptimization").setMaster("local[6]").set("spark.default.parallelism", "12").set("spark.sql.shuffle.partitions", "12").set("spark.executor.memory", "20g").set("spark.driver.memory", "8g")
     sc = SparkContext(conf=conf)
-
     edges_rdd = sc.textFile(file)
 
     # turn each edge into a tuple
@@ -23,12 +22,13 @@ def pageRank(file):
 
     # subtract the nodes from all of the nodes to get node with no outgoing edges so we can add edges
     noOutgoing = nodes.subtract(outGoingedges)
-    addedges(noOutgoing)
+
+    edges = addedges(noOutgoing, nodes, edges)
 
     # Step 1: Set initial rank for each node (set all ranks to 1.0 initially)
     rank = nodes.map(lambda node: (node, 1.0))
 
-    # get all outgoing nodes and its outgoing neighbors
+    # get all outgoing nodes neighbors
     neighbors = edges.groupByKey().mapValues(list)
 
     # Step 4:
@@ -42,18 +42,26 @@ def pageRank(file):
         sumNeighbors = sumNeighbors.union(nodes.subtract(sumNeighbors.keys()).map(lambda node: (node, 0.0)))
 
         # Step 3: Set New Rank
-        rank = sumNeighbors.mapValues(lambda sum : round(0.15 + (0.85 * sum), 3))
+        rank = sumNeighbors.mapValues(lambda sum : 0.15 + (0.85 * sum))
         print("rank: " + str(rank.collect()))
     
     numOfNodes = nodes.count()
-    Final_rank  = rank.mapValues(lambda x: x/numOfNodes)
+    Final_rank  = rank.mapValues(lambda x: round(x/numOfNodes,3))
+    Final_rank = Final_rank.sortBy(lambda x: x)
     print(Final_rank.collect())
 
     sc.stop()
 
 
-def addedges(noOutgoing):
-    return noOutgoing
+def addedges(noOutgoing, nodes, edges):
+    nodes_list = nodes.collect()
+    # Create new edges
+    added_edges = noOutgoing.flatMap(lambda node : [(node, otherNode) for otherNode in nodes_list if node != otherNode] )
+
+    # add new edges to edges rdd
+    edges = edges.union(added_edges)
+    return edges
+
 
 
 pageRank("HW3/edges.txt")
