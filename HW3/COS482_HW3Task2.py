@@ -9,15 +9,9 @@ conf = SparkConf().setAppName("PageRank").setMaster("local")
 sc = SparkContext(conf=conf)
 
 # Read text file and create graph 
-#edges_rdd = sc.textFile("HW3/edges.txt")
+edges_rdd = sc.textFile("HW3/edges.txt")
 
-# Define the edges as a list of tuples (each tuple is an edge between two vertices)
-edges = [(0, 2), (2, 0), (1, 2), (1, 3), (3, 2)]
-
-# Parallelize the edges to create an RDD
-edges_rdd = sc.parallelize(edges)
-
-print(edges_rdd.take(5))
+print(edges_rdd.collect())
 
 # turn each edge into a tuple
 edges = edges_rdd.map(lambda line: tuple(map(int,line.split())))
