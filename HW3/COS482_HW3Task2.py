@@ -50,6 +50,7 @@ def pageRank(file):
     Final_rank  = rank.mapValues(lambda x: round(x/numOfNodes,3))
     Final_rank = Final_rank.sortBy(lambda x: x[0])
     
+    # Using saveAsTextFile to save in one text file in the pagerank_output dir
     Final_rank.map(lambda x: str(x[0]) + " " + str(x[1])).coalesce(1).saveAsTextFile("HW3/pagerank_output")
 
     sc.stop()
