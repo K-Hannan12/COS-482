@@ -8,7 +8,6 @@ rdd = spark.sparkContext.textFile("HW3/pagerank_output/part-00000")
 
 rdd_split = rdd.map(lambda line: line.split())
 
-
 rank_df = spark.createDataFrame(rdd_split.map(lambda x: (int(x[0]), float(x[1]))), ['Node','Rank'])
 
 rank_df.createOrReplaceTempView('rank_df')
