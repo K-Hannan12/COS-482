@@ -43,12 +43,14 @@ def pageRank(file):
 
         # Step 3: Set New Rank
         rank = sumNeighbors.mapValues(lambda sum : 0.15 + (0.85 * sum))
-        print("rank: " + str(rank.collect()))
+        # For debuging
+        #print("rank: " + str(rank.collect()))
     
     numOfNodes = nodes.count()
     Final_rank  = rank.mapValues(lambda x: round(x/numOfNodes,3))
-    Final_rank = Final_rank.sortBy(lambda x: x)
-    print(Final_rank.collect())
+    Final_rank = Final_rank.sortBy(lambda x: x[0])
+    
+    Final_rank.map(lambda x: str(x[0]) + " " + str(x[1])).coalesce(1).saveAsTextFile("HW3/pagerank_output")
 
     sc.stop()
 
